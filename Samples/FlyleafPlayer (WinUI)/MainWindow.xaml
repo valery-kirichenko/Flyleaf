@@ -13,7 +13,7 @@
     <Grid x:Name="rootGrid">
         <Grid.Resources>
             <winui:TicksToTimeConverter x:Key="TicksToTime"/>
-            <winui:TicksToSecondsConverter x:Key="TicksToSeconds" />
+            <winui:TicksToMilliSecondsConverter x:Key="TicksToMilliSeconds" />
         </Grid.Resources>
         
         <winui:FullScreenContainer x:Name="FSC">
@@ -40,8 +40,8 @@
                         <Slider IsTabStop="False" Grid.Column="1" Margin="10,0,10,0" 
                                 VerticalAlignment="Center"
                                 IsThumbToolTipEnabled="False"
-                                Value="{Binding Player.CurTime, Mode=TwoWay, Converter={StaticResource TicksToSeconds}}" 
-                                Maximum="{Binding Player.Duration, Converter={StaticResource TicksToSeconds}}"/>
+                                Value="{Binding Player.CurTime, Mode=TwoWay, Converter={StaticResource TicksToMilliSeconds}}" 
+                                Maximum="{Binding Player.Duration, Converter={StaticResource TicksToMilliSeconds}}"/>
                         
                         <TextBlock Grid.Column="2"
                                    HorizontalAlignment="Center" 

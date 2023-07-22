@@ -46,7 +46,10 @@ public sealed partial class MainWindow : Window
             FFmpegPath      = ":FFmpeg",
         });
 
-        Player = new Player();
+        Config config = new();
+        config.Player.SeekAccurate = true;
+
+        Player = new Player(config);
 
         FullScreenContainer.CustomizeFullScreenWindow += FullScreenContainer_CustomizeFullScreenWindow;
 
